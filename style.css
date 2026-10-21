@@ -1,0 +1,370 @@
+
+:root {
+  --green: #236b57;
+  --green-dark: #164b3e;
+  --mint: #eaf3ed;
+  --cream: #faf9f5;
+  --ink: #1e302b;
+  --muted: #74817a;
+  --line: #e7eae5;
+  --white: #fff;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--green); text-decoration: none; }
+button, input, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+img { display: block; max-width: 100%; }
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 24px; padding: 18px 6%; background: rgba(255,255,255,.95);
+  border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 750; font-size: 19px; }
+.brand-icon { color: var(--green); font-size: 30px; }
+.brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 400; }
+nav { display: flex; flex-wrap: wrap; gap: 24px; font-size: 13px; font-weight: 600; }
+nav a { color: var(--ink); }
+nav a:hover, a:hover { color: #52917b; }
+
+main { max-width: 1240px; margin: auto; padding: 0 28px; }
+.hero {
+  display: grid; grid-template-columns: .9fr 1.1fr;
+  align-items: center; gap: 42px; padding: 56px 0 42px;
+}
+.eyebrow { color: var(--green); font-size: 10px; letter-spacing: 2px; font-weight: 800; }
+h1 { font-size: clamp(38px, 5vw, 64px); line-height: 1.1; letter-spacing: -2px; margin: 16px 0; }
+h1 span { color: var(--green); }
+.hero-copy > p { max-width: 440px; color: var(--muted); margin-bottom: 28px; }
+.hero-image { position: relative; }
+.hero-image img {
+  width: 100%; height: 340px; object-fit: cover;
+  border-radius: 26px; box-shadow: 0 16px 40px #183c2818;
+}
+.image-label {
+  position: absolute; left: 16px; bottom: 16px;
+  background: white; padding: 9px 15px; border-radius: 30px;
+  font-size: 12px; font-weight: 650;
+}
+.primary-btn, .secondary-btn {
+  border: 0; border-radius: 10px; padding: 12px 19px;
+  display: inline-flex; justify-content: center; align-items: center;
+  font-weight: 650; font-size: 13px; transition: .2s;
+}
+.primary-btn { background: var(--green); color: white; }
+.primary-btn:hover { background: var(--green-dark); color: white; transform: translateY(-1px); }
+.secondary-btn { background: var(--mint); color: var(--green-dark); }
+.text-btn { background: none; border: 0; color: var(--green); font-weight: 650; }
+
+.search-panel {
+  background: white; padding: 22px; border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: 0 10px 30px #193e2410;
+}
+.search-panel label, .planner-form label { display: block; font-size: 12px; font-weight: 700; }
+.search-row { display: grid; grid-template-columns: 1fr 210px auto; gap: 12px; margin-top: 10px; }
+input, select {
+  width: 100%; min-width: 0; padding: 12px 13px; margin-top: 7px;
+  border: 1px solid var(--line); border-radius: 9px; background: white; color: var(--ink);
+}
+input:focus, select:focus { outline: 2px solid #91c8b3; border-color: var(--green); }
+
+.section { padding: 54px 0 10px; scroll-margin-top: 20px; }
+.section-heading {
+  display: flex; justify-content: space-between; align-items: end;
+  gap: 16px; margin-bottom: 22px;
+}
+h2 { font-size: clamp(24px, 3vw, 32px); letter-spacing: -.8px; margin: 5px 0 0; }
+h3 { margin: 0 0 8px; font-size: 17px; }
+.muted { color: var(--muted); font-size: 12px; }
+.place-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.place-card {
+  overflow: hidden; background: white; border: 1px solid var(--line);
+  border-radius: var(--radius); transition: transform .2s, box-shadow .2s;
+}
+.place-card:hover { transform: translateY(-4px); box-shadow: 0 12px 26px #1d402415; }
+.place-card img { width: 100%; height: 200px; object-fit: cover; background: var(--mint); }
+.place-info { padding: 17px; }
+.place-info p { color: var(--muted); font-size: 12px; min-height: 38px; }
+.tag {
+  display: inline-block; background: var(--mint); color: var(--green);
+  border-radius: 30px; padding: 4px 9px; font-size: 10px; font-weight: 700;
+}
+.card-actions { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.add-btn, .favorite-btn {
+  background: white; border: 1px solid var(--line); border-radius: 9px;
+  padding: 8px 11px; color: var(--green); font-size: 12px; font-weight: 650;
+}
+.add-btn:hover, .favorite-btn:hover { background: var(--mint); }
+.note { margin-top: 12px; }
+
+ { height: 420px; border-radius: var(--radius); border: 1px solid var(--line); z-index: 1; }
+.transport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.transport-card { padding: 24px; border-radius: var(--radius); background: white; border: 1px solid var(--line); }
+.transport-icon { font-size: 28px; }
+.transport-card p { font-size: 13px; color: var(--muted); min-height: 82px; }
+.transport-card a { font-size: 12px; font-weight: 700; }
+
+.planner { background: var(--mint); padding: 30px; border-radius: 22px; margin: 50px 0; }
+.planner-form { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 14px; }
+.itinerary-header { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; }
+.itinerary-list { display: grid; gap: 10px; }
+.itinerary-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 13px 15px; background: white; border: 1px solid var(--line); border-radius: 12px;
+}
+.itinerary-item p { margin: 3px 0 0; font-size: 11px; color: var(--muted); }
+.remove-btn { background: transparent; color: #a54f43; border: 0; padding: 8px; }
+.planner-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+footer { text-align: center; padding: 40px 20px; margin-top: 50px; background: white; border-top: 1px solid var(--line); }
+footer p { color: var(--muted); font-size: 13px; }
+footer small { color: var(--muted); font-size: 11px; }
+
+@media (max-width: 800px) {
+  .navbar { align-items: flex-start; flex-direction: column; }
+  nav { gap: 12px 18px; }
+  .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 35px; }
+  .hero-image img { height: 280px; }
+  .search-row { grid-template-columns: 1fr; }
+  .place-grid { grid-template-columns: repeat(2, 1fr); }
+  .transport-grid { grid-template-columns: 1fr; }
+  .transport-card p { min-height: 0; }
+  .planner-form { grid-template-columns: 1fr; }
+}
+#map {
+  width: 100%;
+  height: 420px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  z-index: 1;
+}
+@media (max-width: 520px) {
+  main { padding: 0 16px; }
+  .place-grid { grid-template-columns: 1fr; }
+  .place-card img { height: 220px; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .planner { padding: 20px 15px; }
+  #map { height: 330px; }
+}
+@media print {
+  .navbar, .hero, .search-panel, #places, #map-section,
+  #transport, footer, .planner-actions, .text-btn, .remove-btn { display: none !important; }
+  body, .planner { background: white; }
+  main { max-width: none; padding: 0; }
+  .planner { margin: 0; padding: 0; }
+}#map
+
+.map-legend {
+  margin-top: 16px;
+  padding: 18px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.map-legend h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+.legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legend-items span {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background: #f3f7f2;
+  font-size: 13px;
+}
+  
+.custom-map-icon {
+  background: transparent;
+  border: none;
+}
+
+.map-legend {
+  margin-top: 14px;
+  padding: 16px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.map-legend strong {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.legend-items span {
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: #f3f7f2;
+  font-size: 12px;
+}
+
+/* Phần đánh giá khách sạn */
+.hotel-ratings {
+  margin: 14px 0;
+  padding: 12px;
+  background: #f8f5f0;
+  border: 1px solid #eee5d9;
+  border-radius: 12px;
+}
+
+.hotel-ratings p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.hotel-ratings strong {
+  color: #41352d;
+}
+
+.hotel-ratings a {
+  display: inline-block;
+  margin-top: 6px;
+  color: #8b6246;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.hotel-ratings a:hover {
+  color: #5f402d;
+}
+
+.hotel-card .card-actions {
+  margin-top: 12px;
+}
+
+.hotel-card .card-actions a {
+  text-decoration: none;
+}
+
+.planner-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.planner-tab {
+  padding: 12px 18px;
+  border: 1px solid #e5d9cc;
+  border-radius: 12px;
+  background: #fff;
+  color: #574536;
+  cursor: pointer;
+  font: inherit;
+}
+
+.planner-tab.active {
+  background: #805b43;
+  color: #fff;
+  border-color: #805b43;
+}
+
+.suggestion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0 28px;
+}
+
+.suggestion-card {
+  padding: 20px;
+  border: 1px solid #eadfd3;
+  border-radius: 16px;
+  background: #fffdf9;
+}
+
+.suggestion-card > span {
+  font-size: 30px;
+}
+
+.suggestion-card h3 {
+  margin: 12px 0 8px;
+}
+
+.suggestion-card p {
+  line-height: 1.6;
+  color: #75695f;
+}
+
+.suggestion-card .primary-btn {
+  display: inline-block;
+  margin-top: 8px;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+}
+
+.planner-details {
+  margin-top: 28px;
+}
+
+.itinerary-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  padding: 18px;
+  margin: 12px 0;
+  border: 1px solid #eadfd3;
+  border-radius: 14px;
+  background: white;
+}
+
+.activity-time {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.activity-time label {
+  flex: 1;
+  min-width: 130px;
+  font-size: 13px;
+  color: #75695f;
+}
+
+.activity-time input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  padding: 9px;
+  border: 1px solid #ddd0c3;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.itinerary-item .remove-btn {
+  justify-self: end;
+}
+
+@media (max-width: 700px) {
+  .suggestion-grid {
+    grid-template-columns: 1fr;
+  }
+}

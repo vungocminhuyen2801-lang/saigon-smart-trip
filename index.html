@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saigon Smart Trip | Khám phá Sài Gòn</title>
+  <meta name="description" content="Khám phá địa điểm, phương tiện và tạo lịch trình du lịch TP.HCM.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">✦</span>
+      <span>Saigon Smart Trip<small>Khám phá theo cách của bạn</small></span>
+    </a>
+    <nav>
+      <a href="#places">Địa điểm</a>
+      <a href="#map-section">Bản đồ</a>
+      <a href="#transport">Di chuyển</a>
+      <a href="#hotels">Lưu trú</a>
+      <a href="#planner">Lịch trình</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</span>
+        <h1>Sài Gòn, theo cách <span>của bạn.</span></h1>
+        <p>Tìm nơi để đi, món ngon để thử và hành trình phù hợp với thời gian, ngân sách của bạn.</p>
+        <a class="primary-btn" href="#places">Khám phá ngay ↗</a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?auto=format&fit=crop&w=1200&q=85"
+             alt="Khung cảnh thành phố Hồ Chí Minh">
+        <div class="image-label">✦ Thành phố không ngủ</div>
+      </div>
+    </section>
+
+    <section class="search-panel">
+      <label for="search">Bạn muốn khám phá điều gì?</label>
+      <div class="search-row">
+        <input id="search" type="search" placeholder="VD: Bưu điện, cà phê, bảo tàng...">
+        <select id="category" aria-label="Loại địa điểm">
+          <option value="all">Tất cả địa điểm</option>
+          <option value="thamquan">Tham quan</option>
+          <option value="anuong">Ăn uống</option>
+          <option value="vuichoi">Vui chơi</option>
+        </select>
+        <button class="primary-btn" id="searchBtn">Tìm kiếm</button>
+      </div>
+    </section>
+
+    <section class="section" id="places">
+      <div class="section-heading">
+        <div><span class="eyebrow">DISCOVER SAIGON</span><h2>Điểm đến nổi bật</h2></div>
+        <span class="muted">Chọn nơi bạn muốn ghé thăm</span>
+      </div>
+      <div id="place-list" class="place-grid"></div>
+      <p id="empty-state" class="muted" hidden>Không tìm thấy địa điểm phù hợp.</p>
+    </section>
+
+    <section class="section" id="map-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">EXPLORE THE CITY</span><h2>Bản đồ khám phá</h2></div>
+        <span class="muted">Chọn điểm đánh dấu để xem địa điểm</span>
+      </div>
+      <div id="map"></div>
+
+<div class="map-legend">
+  <h3>Chú thích ký hiệu</h3>
+  <div class="legend-items">
+    <span>🍜 Quán ăn</span>
+    <span>☕ Cà phê, trà sữa</span>
+    <span>📸 Tham quan, check-in</span>
+    <span>🏛️ Di tích, bảo tàng</span>
+    <span>🛍️ Chợ, mua sắm</span>
+    <span>🌳 Công viên</span>
+    <span>🚌 Bến xe</span>
+    <span>🚇 Ga Metro</span>
+  </div>
+</div>
+      <p class="muted note">Bản đồ cần Internet. Vị trí đánh dấu là vị trí tham khảo, hãy kiểm tra địa chỉ trước khi di chuyển.</p>
+    </section>
+
+    <section class="section" id="transport">
+      <div class="section-heading">
+        <div><span class="eyebrow">GETTING AROUND</span><h2>Di chuyển thông minh</h2></div>
+      </div>
+      <div class="transport-grid">
+        <article class="transport-card">
+          <span class="transport-icon">🚇</span>
+          <h3>Metro số 1</h3>
+          <p>Kết nối khu vực Bến Thành với Suối Tiên. Phù hợp khi đi giữa trung tâm và phía Đông thành phố.</p>
+          <a href="https://www.google.com/maps/search/Metro+Ben+Thanh+Suoi+Tien/" target="_blank" rel="noopener">Xem trên bản đồ ↗</a>
+        </article>
+        <article class="transport-card">
+          <span class="transport-icon">🚌</span>
+          <h3>Xe buýt</h3>
+          <p>Tra cứu tuyến xe, điểm dừng và đường đi phù hợp với điểm xuất phát.</p>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Saigon+Zoo&travelmode=transit" target="_blank" rel="noopener">Tìm đường công cộng ↗</a>
+        </article>
+        <article class="transport-card">
+          <span class="transport-icon">🚶</span>
+          <h3>Đi bộ khám phá</h3>
+          <p>Ghé các điểm gần nhau trong cùng khu vực để tận hưởng nhịp sống Sài Gòn.</p>
+          <a href="https://www.google.com/maps/dir/?api=1&origin=Ben+Thanh+Market&destination=Independence+Palace&travelmode=walking" target="_blank" rel="noopener">Xem đường đi bộ ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- MỤC LƯU TRÚ -->
+    <section class="section" id="hotels">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">STAY IN SAIGON</span>
+          <h2>Lưu trú tại Sài Gòn</h2>
+        </div>
+        <span class="muted">Chọn nơi nghỉ phù hợp với ngân sách</span>
+      </div>
+
+      <div class="hotel-filters">
+        <button class="hotel-filter active" data-price="all">Tất cả</button>
+        <button class="hotel-filter" data-price="budget">Tiết kiệm</button>
+        <button class="hotel-filter" data-price="mid">Tầm trung</button>
+        <button class="hotel-filter" data-price="luxury">Cao cấp</button>
+      </div>
+
+      <div id="hotel-list" class="place-grid"></div>
+
+      <p class="muted note">
+        Giá phòng mang tính tham khảo. Vui lòng kiểm tra giá,
+        ngày lưu trú và tình trạng phòng trên trang đặt phòng.
+      </p>
+    </section>
+
+    
+<section class="section planner" id="planner">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">YOUR PERSONAL JOURNEY</span>
+      <h2>Lên lịch trình Sài Gòn</h2>
+    </div>
+    <span class="muted">Chọn hành trình phù hợp với bạn</span>
+  </div>
+
+  <div class="planner-tabs">
+    <button class="planner-tab active" data-mode="suggested">
+      ✨ Lịch trình gợi ý
+    </button>
+    <button class="planner-tab" data-mode="custom">
+      ✏️ Tự tạo lịch trình
+    </button>
+  </div>
+
+  <div id="suggested-plans">
+    <h3>Chọn phong cách khám phá</h3>
+    <div class="suggestion-grid">
+      <article class="suggestion-card">
+        <span>💰</span>
+        <h3>Tiết kiệm</h3>
+        <p>Ưu tiên địa điểm miễn phí, đi bộ và trải nghiệm ẩm thực vừa túi tiền.</p>
+        <button class="primary-btn" data-plan="budget">Chọn lịch trình</button>
+      </article>
+
+      <article class="suggestion-card">
+        <span>📸</span>
+        <h3>Trải nghiệm</h3>
+        <p>Kết hợp di tích, văn hóa, món ngon và những góc đặc trưng của Sài Gòn.</p>
+        <button class="primary-btn" data-plan="experience">Chọn lịch trình</button>
+      </article>
+
+      <article class="suggestion-card">
+        <span>🌿</span>
+        <h3>Thư giãn</h3>
+        <p>Đi dạo, tận hưởng không gian xanh và khám phá thành phố với nhịp độ nhẹ nhàng.</p>
+        <button class="primary-btn" data-plan="relax">Chọn lịch trình</button>
+      </article>
+    </div>
+  </div>
+
+  <div id="custom-planner" hidden>
+    <h3>Tạo chuyến đi của riêng bạn</h3>
+    <p class="muted">Thêm địa điểm từ mục “Điểm đến nổi bật” phía trên, rồi đặt giờ cho từng hoạt động.</p>
+    <a class="secondary-btn" href="#places">＋ Chọn địa điểm</a>
+  </div>
+
+  <div class="planner-details">
+    <h3>Thông tin chuyến đi</h3>
+
+    <div class="planner-form">
+      <label>Tên chuyến đi
+        <input id="trip-name" value="Một ngày ở Sài Gòn">
+      </label>
+
+      <label>Ngày đi
+        <input id="trip-date" type="date">
+      </label>
+
+      <label>Ngân sách dự kiến (VNĐ)
+        <input id="trip-budget" type="number" min="0" step="50000" placeholder="500000">
+      </label>
+    </div>
+
+    <div class="itinerary-header">
+      <h3>Hoạt động trong lịch trình <span id="trip-count">(0)</span></h3>
+      <button class="text-btn" id="clearTrip">Xóa tất cả</button>
+    </div>
+
+    <div id="itinerary" class="itinerary-list"></div>
+    <p id="trip-empty" class="muted">Chưa có hoạt động nào. Hãy chọn lịch trình gợi ý hoặc tự thêm địa điểm nhé!</p>
+
+    <div class="planner-actions">
+      <button class="primary-btn" id="saveTrip">Lưu lịch trình</button>
+      <button class="secondary-btn" id="printTrip">In / Lưu PDF</button>
+    </div>
+
+    <p id="trip-status" class="muted" role="status" aria-live="polite"></p>
+  </div>
+</section>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
