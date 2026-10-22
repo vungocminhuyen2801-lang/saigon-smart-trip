@@ -1,11 +1,11 @@
 
 :root {
-  --green: #236b57;
-  --green-dark: #164b3e;
-  --mint: #eaf3ed;
+  --green: #162461;
+  --green-dark: #0e1946;
+  --mint: #e0efff;
   --cream: #faf9f5;
-  --ink: #1e302b;
-  --muted: #74817a;
+  --ink: #151587;
+  --muted: #070f2e;
   --line: #e7eae5;
   --white: #fff;
   --radius: 18px;
@@ -108,7 +108,7 @@ h3 { margin: 0 0 8px; font-size: 17px; }
 .add-btn:hover, .favorite-btn:hover { background: var(--mint); }
 .note { margin-top: 12px; }
 
- { height: 420px; border-radius: var(--radius); border: 1px solid var(--line); z-index: 1; }
+ 
 .transport-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .transport-card { padding: 24px; border-radius: var(--radius); background: white; border: 1px solid var(--line); }
 .transport-icon { font-size: 28px; }
@@ -124,7 +124,7 @@ h3 { margin: 0 0 8px; font-size: 17px; }
   padding: 13px 15px; background: white; border: 1px solid var(--line); border-radius: 12px;
 }
 .itinerary-item p { margin: 3px 0 0; font-size: 11px; color: var(--muted); }
-.remove-btn { background: transparent; color: #a54f43; border: 0; padding: 8px; }
+.remove-btn { background: transparent; color: #06019c; border: 0; padding: 8px; }
 .planner-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 
 footer { text-align: center; padding: 40px 20px; margin-top: 50px; background: white; border-top: 1px solid var(--line); }
@@ -163,7 +163,7 @@ footer small { color: var(--muted); font-size: 11px; }
   body, .planner { background: white; }
   main { max-width: none; padding: 0; }
   .planner { margin: 0; padding: 0; }
-}#map
+}
 
 .map-legend {
   margin-top: 16px;
@@ -226,8 +226,8 @@ footer small { color: var(--muted); font-size: 11px; }
 .hotel-ratings {
   margin: 14px 0;
   padding: 12px;
-  background: #f8f5f0;
-  border: 1px solid #eee5d9;
+  background: #f6f9fd;
+  border: 1px solid #edf4fc;
   border-radius: 12px;
 }
 
@@ -238,19 +238,19 @@ footer small { color: var(--muted); font-size: 11px; }
 }
 
 .hotel-ratings strong {
-  color: #41352d;
+  color: #041a59;
 }
 
 .hotel-ratings a {
   display: inline-block;
   margin-top: 6px;
-  color: #8b6246;
+  color: #1a2d8f;
   font-size: 13px;
   text-decoration: underline;
 }
 
 .hotel-ratings a:hover {
-  color: #5f402d;
+  color: #1a2d8f;
 }
 
 .hotel-card .card-actions {
@@ -270,18 +270,18 @@ footer small { color: var(--muted); font-size: 11px; }
 
 .planner-tab {
   padding: 12px 18px;
-  border: 1px solid #e5d9cc;
+  border: 1px solid #ccdae5;
   border-radius: 12px;
-  background: #fff;
-  color: #574536;
+  background: #ffffff;
+  color: #d5e6ff;
   cursor: pointer;
   font: inherit;
 }
 
 .planner-tab.active {
-  background: #805b43;
+  background: #06019c;
   color: #fff;
-  border-color: #805b43;
+  border-color: #07028d;
 }
 
 .suggestion-grid {
@@ -308,7 +308,7 @@ footer small { color: var(--muted); font-size: 11px; }
 
 .suggestion-card p {
   line-height: 1.6;
-  color: #75695f;
+  color: #06019c;
 }
 
 .suggestion-card .primary-btn {
@@ -330,7 +330,7 @@ footer small { color: var(--muted); font-size: 11px; }
   gap: 12px;
   padding: 18px;
   margin: 12px 0;
-  border: 1px solid #eadfd3;
+  border: 1px solid #06019c;
   border-radius: 14px;
   background: white;
 }
@@ -345,7 +345,7 @@ footer small { color: var(--muted); font-size: 11px; }
   flex: 1;
   min-width: 130px;
   font-size: 13px;
-  color: #75695f;
+  color: #06019c;
 }
 
 .activity-time input {
@@ -354,7 +354,7 @@ footer small { color: var(--muted); font-size: 11px; }
   box-sizing: border-box;
   margin-top: 6px;
   padding: 9px;
-  border: 1px solid #ddd0c3;
+  border: 1px solid #c4c3dd;
   border-radius: 8px;
   font: inherit;
 }
@@ -367,4 +367,104 @@ footer small { color: var(--muted); font-size: 11px; }
   .suggestion-grid {
     grid-template-columns: 1fr;
   }
+}
+.place-hours {
+  color: #06019c;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+.cafe-tag {
+  display: inline-block;
+  width: fit-content;
+  background:#f0f6ff;
+  color:  #f0f6ff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.cafe-tag {
+  display: inline-block;
+  width: fit-content;
+  background: #f0f6ff;
+  color: #07028d;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Thanh điều hướng và bộ chọn ngôn ngữ */
+/* Thu gọn thanh menu */
+.navbar {
+  gap: 10px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: clamp(8px, 1.2vw, 16px);
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.main-nav a {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+#language-switcher {
+  width: 65px;
+  min-width: 0;
+  padding: 6px 2px;
+  font-size: 12px;
+  flex: 0 0 65px;
+}
+
+/* Contact Information */
+.contact-section {
+  margin-top: 36px;
+  padding: 28px;
+  border-radius: 18px;
+  background: #f8f5ff;
+}
+
+.contact-section h2 {
+  margin-bottom: 22px;
+  color: #493b67;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.contact-icon {
+  font-size: 24px;
+}
+
+.contact-item h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.contact-item a {
+  color: #6d55a3;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-item p {
+  margin: 6px 0 0;
+  color: #777;
 }

@@ -14,13 +14,20 @@
       <span class="brand-icon">✦</span>
       <span>Saigon Smart Trip<small>Khám phá theo cách của bạn</small></span>
     </a>
-    <nav>
-      <a href="#places">Địa điểm</a>
-      <a href="#map-section">Bản đồ</a>
-      <a href="#transport">Di chuyển</a>
-      <a href="#hotels">Lưu trú</a>
-      <a href="#planner">Lịch trình</a>
+    <nav class="main-nav">
+      <select id="language-switcher" aria-label="Chọn ngôn ngữ">
+        <option value="vi">🇻🇳 VI</option>
+        <option value="en">🇬🇧 EN</option>
+      </select>
+
+      <a href="about.html" data-i18n="navAbout">Giới thiệu</a>
+      <a href="#places" data-i18n="navPlaces">Địa điểm</a>
+      <a href="#map-section" data-i18n="navMap">Bản đồ</a>
+      <a href="#transport" data-i18n="navTransport">Di chuyển</a>
+      <a href="#hotels" data-i18n="navHotels">Lưu trú</a>
+      <a href="#planner" data-i18n="navPlanner">Lịch trình</a>
     </nav>
+
   </header>
 
   <main>
@@ -59,6 +66,20 @@
       </div>
       <div id="place-list" class="place-grid"></div>
       <p id="empty-state" class="muted" hidden>Không tìm thấy địa điểm phù hợp.</p>
+    </section>
+
+     <section class="section" id="food">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">LOCAL FOOD</span>
+          <h2>Ăn uống</h2>
+        </div>
+        <span class="muted">Khám phá ẩm thực địa phương Sài Gòn</span>
+      </div>
+      <div id="food-list" class="place-grid"></div>
+      <p id="food-empty-state" class="muted" hidden>
+        Không tìm thấy quán ăn phù hợp.
+      </p>
     </section>
 
     <section class="section" id="map-section">
@@ -219,7 +240,44 @@
     <p id="trip-status" class="muted" role="status" aria-live="polite"></p>
   </div>
 </section>
+<section id="place-detail" class="place-detail-section" hidden>
+  <button id="close-place-detail" class="secondary-btn">
+    ← Quay lại danh sách
+  </button>
+
+  <div id="place-detail-content"></div>
+</section>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
+
+<section class="contact-section">
+  <h2 data-vi="Thông tin liên hệ" data-en="Contact Information">
+    Thông tin liên hệ
+  </h2>
+
+  <div class="contact-item">
+    <span class="contact-icon">✉️</span>
+    <div>
+      <h3 data-vi="Gmail" data-en="Email">Gmail</h3>
+      <a href="mailto:f4muvikno.1@gmail.com">
+        f4muvikno.1@gmail.com
+      </a>
+    </div>
+  </div>
+
+  <div class="contact-item">
+    <span class="contact-icon">📞</span>
+    <div>
+      <h3 data-vi="Số điện thoại" data-en="Phone number">
+        Số điện thoại
+      </h3>
+      <a href="tel:0936626164">0936626164</a>
+      <p data-vi="Minh Uyên (Trưởng nhóm)"
+         data-en="Minh Uyen (Team Leader)">
+        Minh Uyên (Trưởng nhóm)
+      </p>
+    </div>
+  </div>
+</section>
